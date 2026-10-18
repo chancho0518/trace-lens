@@ -1,0 +1,18 @@
+exclude: '(^|/)(\.venv|venv|__pycache__|\.git|\.github|\.langgraph_api|media|\.pytest_cache|\.ruff_cache)(/|$)|\.(env(\.example)?|gitignore)$|uv\.lock|langgraph\.json'
+
+repos:
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.9.2
+    hooks:
+      - id: uv-lock
+        # Keep the dependency lock file in sync
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.12.0
+    hooks:
+      - id: ruff-check
+        # Lint and tidy imports
+        types_or: [python, pyi]
+        args: [--fix]
+      - id: ruff-format
+        # Format code
+        types_or: [python, pyi]

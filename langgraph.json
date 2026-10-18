@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "transaction-analyzer": "./casts/transaction_analyzer/graph.py:transaction_analyzer_graph"
+  },
+  "env": ".env"
+}
